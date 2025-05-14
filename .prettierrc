@@ -1,0 +1,21 @@
+{
+  "plugins": ["prettier-plugin-django"],
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": "templates/**/*.html",
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "strict"
+      }
+    }
+  ],
+  "singleQuote": true,
+  "printWidth": 100,
+  "htmlWhitespaceSensitivity": "css"
+}

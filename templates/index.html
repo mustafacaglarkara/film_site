@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Hoş Geldiniz" %}</title>
+</head>
+<body>
+    <h1>{% trans "Hoş Geldiniz" %}</h1>
+    
+    <p>{% trans "Bu site Türkçe ve İngilizce olarak kullanılabilir." %}</p>
+    
+    <h2>{% trans "Dil Değiştir" %}:</h2>
+    <form id="language-form" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="">
+        <select name="language" onchange="this.form.submit()">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% for lang_code, lang_name in LANGUAGES %}
+                <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                    {{ lang_name }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dil değişim formunu bul
+            const form = document.getElementById('language-form');
+            const langSelect = form.querySelector('select[name="language"]');
+            const nextInput = form.querySelector('input[name="next"]');
+            
+            // Form gönderilmeden önce doğru next değerini ayarla
+            form.addEventListener('submit', function(e) {
+                // İngilizce için /en/, Türkçe için / URL'sini kullan
+                if (langSelect.value === 'en') {
+                    nextInput.value = '/en/';
+                } else {
+                    nextInput.value = '/';
+                }
+            });
+        });
+    </script>
+    
+    <p>{% trans "Silmek istediğinize emin misiniz?" %}</p>
+</body>
+</html> 

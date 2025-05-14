@@ -1,0 +1,37 @@
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+  <div class="page-block">
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'admin_panel:admin_dashboard' %}">Ana Sayfa</a>
+          </li>
+          {% if breadcrumbs %}
+            {% for breadcrumb in breadcrumbs %}
+              {% if not forloop.last %}
+                <li class="breadcrumb-item">
+                  {% if breadcrumb.url %}
+                    <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
+                  {% else %}
+                    <a href="javascript: void(0)">{{ breadcrumb.title }}</a>
+                  {% endif %}
+                </li>
+              {% else %}
+                <li class="breadcrumb-item active" aria-current="page">
+                  {{ breadcrumb.title }}
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+      <div class="col-md-12">
+        <div class="page-header-title">
+          <h2 class="mb-0">{{ page_title|default:"Sayfa" }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] end -->

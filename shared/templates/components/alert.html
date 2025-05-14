@@ -1,0 +1,7 @@
+<!-- prettier-ignore -->
+<div class="alert alert-{{ type|default:'info' }}">{{ message }}</div>
+<!-- prettier-ignore -->
+{% comment %}
+kullanımı:: 
+{% include "components/alert.html" with type="success" message="İşlem başarılı!" %}
+{% endcomment %}

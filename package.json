@@ -1,0 +1,20 @@
+{
+  "name": "firm_site",
+  "version": "1.0.0",
+  "main": "prettier.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "check-format": "prettier --check ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-django": "^0.5.18"
+  },
+  "plugins": [
+    "prettier-plugin-django"
+  ]
+}

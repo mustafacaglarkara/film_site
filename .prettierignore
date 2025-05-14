@@ -1,0 +1,24 @@
+# Django template dosyaları
+templates/**/*.html
+
+# Python ve Django dosyaları
+*.py
+migrations/
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+
+# Statik dosyalar
+static/
+
+# Media dosyaları
+media/
+
+# Diğer dosyalar
+*.md
+*.json
+*.yml
+*.yaml
+*.lock 

@@ -1,0 +1,56 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+  <!-- [Head] start -->
+  <head>
+    <title>Sample Page | Able Pro Dashboard Template</title>
+    <!-- prettier-ignore -->
+    {% include "partials/admin/meta.html" %}
+    <!-- prettier-ignore -->
+    {% include "partials/admin/styles.html" %}
+    {% block styles %}
+    {% endblock styles %}
+  </head>
+  <!-- [Head] end -->
+  <!-- [Body] Start -->
+
+  <body
+    data-pc-preset="preset-1"
+    data-pc-sidebar-caption="true"
+    data-pc-direction="ltr"
+    data-pc-theme_contrast=""
+    data-pc-theme="light"
+  >
+    <!-- prettier-ignore -->
+    {% include "partials/admin/pre_loader.html" %}
+    <!-- prettier-ignore -->
+    {% include "partials/admin/sidebar.html" %}
+    <!-- [ Header Topbar ] start -->
+    <!-- prettier-ignore -->
+    {% include "partials/admin/header.html" %}
+    <!-- prettier-ignore -->
+    {% include "partials/admin/pc-announcement.html" %}
+    <!-- [ Header ] end -->
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+      <div class="pc-content">
+        <!-- prettier-ignore -->
+        {% include "components/admin/breadcrumb.html" %}
+        <!-- [ Main Content ] start -->
+        <div class="row">
+          {% block content %}
+          {% endblock content %}
+        </div>
+        <!-- [ Main Content ] end -->
+      </div>
+    </div>
+    <!-- [ Main Content ] end -->
+    {% include "partials/admin/footer.html" %}
+    {% include "partials/admin/settings_panel.html" %}
+    <!-- Required Js -->
+    {% include "partials/admin/scripts.html" %}
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+  <!-- [Body] end -->
+</html>
