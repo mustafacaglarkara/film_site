@@ -11,9 +11,9 @@ import json
 
 def admin_dashboard(request):
     context = {
-        "page_title": "Yönetim Paneli",
+        "page_title": _("Yönetim Paneli"),
         "breadcrumbs": [
-            {"title": "Yönetim", "url": reverse("admin_panel:admin_dashboard")}
+            {"title": _("Yönetim"), "url": reverse("admin_panel:admin_dashboard")}
         ],
     }
     return render(request, "admin_panel/dashboard.html", context)

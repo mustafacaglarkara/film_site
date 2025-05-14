@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 11:45+0300\n"
+"POT-Creation-Date: 2024-05-14 13:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,14 +13,93 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: admin_panel/templates/admin_panel/dashboard.html:5
+#: admin_panel/views/dashboard.py:14
+msgid "Yönetim Paneli"
+msgstr "Yönetim Paneli"
+
+#: admin_panel/templates/admin_panel/dashboard.html:9
+msgid ""
+"Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
+msgstr ""
+"Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
+
+#: admin_panel/views/dashboard.py:16
+msgid "Yönetim"
+msgstr "Yönetim"
+
+#: blog/models/BlogCategory.py:7
+msgid "Kategori Adı"
+msgstr "Kategori Adı"
+
+#: blog/models/BlogCategory.py:10
+msgid "Blog Kategorisi"
+msgstr "Blog Kategorisi"
+
+#: blog/models/BlogCategory.py:11
+msgid "Blog Kategorileri"
+msgstr "Blog Kategorileri"
+
+#: blog/models/BlogPost.py:8
+msgid "Başlık"
+msgstr "Başlık"
+
+#: blog/models/BlogPost.py:10
+msgid "İçerik"
+msgstr "İçerik"
+
+#: blog/models/BlogPost.py:12
+msgid "Kategori"
+msgstr "Kategori"
+
+#: blog/models/BlogPost.py:15
+msgid "Görsel"
+msgstr "Görsel"
+
+#: blog/models/BlogPost.py:17
+msgid "Yayında mı?"
+msgstr "Yayında mı?"
+
+#: blog/models/BlogPost.py:20
+msgid "Blog Yazısı"
+msgstr "Blog Yazısı"
+
+#: blog/models/BlogPost.py:21
+msgid "Blog Yazıları"
+msgstr "Blog Yazıları"
+
+#: proje_gerekli/locale_desteği.txt:7 templates/index.html:48
+msgid "Silmek istediğinize emin misiniz?"
+msgstr "Silmek istediğinize emin misiniz?"
+
+#: shared/models/BaseModel.py:6
+msgid "Oluşturulma"
+msgstr "Oluşturulma"
+
+#: shared/models/BaseModel.py:7
+msgid "Güncellenme"
+msgstr "Güncellenme"
+
+#: shared/models/BaseModel.py:8
+msgid "Silinme"
+msgstr "Silinme"
+
+#: templates/components/admin/breadcrumb.html:8
+msgid "Ana Sayfa"
+msgstr "Ana Sayfa"
+
+#: templates/components/admin/breadcrumb.html:31
+msgid "Sayfa"
+msgstr "Sayfa"
+
+#: templates/index.html:7 templates/index.html:10
 msgid "Hoş Geldiniz"
 msgstr "Hoş Geldiniz"
 
+#: templates/index.html:12
 msgid "Bu site Türkçe ve İngilizce olarak kullanılabilir."
 msgstr "Bu site Türkçe ve İngilizce olarak kullanılabilir."
 
+#: templates/index.html:14
 msgid "Dil Değiştir"
 msgstr "Dil Değiştir"
-
-msgid "Silmek istediğinize emin misiniz?"
-msgstr "Silmek istediğinize emin misiniz?"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-14 11:45+0300\n"
+"POT-Creation-Date: 2024-05-14 13:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,14 +13,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: admin_panel/templates/admin_panel/dashboard.html:5
+#: admin_panel/views/dashboard.py:14
+msgid "Yönetim Paneli"
+msgstr "Administration Panel"
+
+#: admin_panel/templates/admin_panel/dashboard.html:9
+msgid ""
+"Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
+msgstr ""
+"Welcome to your administration panel. You can perform the following operations:"
+
+#: admin_panel/views/dashboard.py:16
+msgid "Yönetim"
+msgstr "Administration"
+
+#: blog/models/BlogCategory.py:7
+msgid "Kategori Adı"
+msgstr "Category Name"
+
+#: blog/models/BlogCategory.py:10
+msgid "Blog Kategorisi"
+msgstr "Blog Category"
+
+#: blog/models/BlogCategory.py:11
+msgid "Blog Kategorileri"
+msgstr "Blog Categories"
+
+#: blog/models/BlogPost.py:8
+msgid "Başlık"
+msgstr "Title"
+
+#: blog/models/BlogPost.py:10
+msgid "İçerik"
+msgstr "Content"
+
+#: blog/models/BlogPost.py:12
+msgid "Kategori"
+msgstr "Category"
+
+#: blog/models/BlogPost.py:15
+msgid "Görsel"
+msgstr "Image"
+
+#: blog/models/BlogPost.py:17
+msgid "Yayında mı?"
+msgstr "Published?"
+
+#: blog/models/BlogPost.py:20
+msgid "Blog Yazısı"
+msgstr "Blog Post"
+
+#: blog/models/BlogPost.py:21
+msgid "Blog Yazıları"
+msgstr "Blog Posts"
+
+#: proje_gerekli/locale_desteği.txt:7 templates/index.html:48
+msgid "Silmek istediğinize emin misiniz?"
+msgstr "Are you sure you want to delete?"
+
+#: shared/models/BaseModel.py:6
+msgid "Oluşturulma"
+msgstr "Created"
+
+#: shared/models/BaseModel.py:7
+msgid "Güncellenme"
+msgstr "Updated"
+
+#: shared/models/BaseModel.py:8
+msgid "Silinme"
+msgstr "Deleted"
+
+#: templates/components/admin/breadcrumb.html:8
+msgid "Ana Sayfa"
+msgstr "Home"
+
+#: templates/components/admin/breadcrumb.html:31
+msgid "Sayfa"
+msgstr "Page"
+
+#: templates/index.html:7 templates/index.html:10
 msgid "Hoş Geldiniz"
 msgstr "Welcome"
 
+#: templates/index.html:12
 msgid "Bu site Türkçe ve İngilizce olarak kullanılabilir."
 msgstr "This site is available in Turkish and English."
 
+#: templates/index.html:14
 msgid "Dil Değiştir"
 msgstr "Change Language"
 
-msgid "Silmek istediğinize emin misiniz?"
-msgstr "Are you sure you want to delete?"
+# System messages below - keep empty for default Django translations

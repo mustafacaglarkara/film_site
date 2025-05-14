@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- [ breadcrumb ] start -->
 <div class="page-header">
   <div class="page-block">
@@ -5,7 +6,7 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{% url 'admin_panel:admin_dashboard' %}">Ana Sayfa</a>
+            <a href="{% url 'admin_panel:admin_dashboard' %}">{% trans "Ana Sayfa" %}</a>
           </li>
           {% if breadcrumbs %}
             {% for breadcrumb in breadcrumbs %}
@@ -28,7 +29,7 @@
       </div>
       <div class="col-md-12">
         <div class="page-header-title">
-          <h2 class="mb-0">{{ page_title|default:"Sayfa" }}</h2>
+          <h2 class="mb-0">{{ page_title|default:_("Sayfa") }}</h2>
         </div>
       </div>
     </div>
