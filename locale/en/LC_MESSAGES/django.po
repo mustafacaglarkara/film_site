@@ -1,4 +1,8 @@
-# This file contains translations for the templates.
+# English translations.
+# Copyright (C) 2024
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,10 +23,8 @@ msgid "Yönetim Paneli"
 msgstr "Administration Panel"
 
 #: admin_panel/templates/admin_panel/dashboard.html:9
-msgid ""
-"Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
-msgstr ""
-"Welcome to your administration panel. You can perform the following operations:"
+msgid "Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
+msgstr "Welcome to your administration panel. You can perform the following operations:"
 
 #: admin_panel/views/dashboard.py:16
 msgid "Yönetim"
@@ -68,31 +70,7 @@ msgstr "Blog Post"
 msgid "Blog Yazıları"
 msgstr "Blog Posts"
 
-#: proje_gerekli/locale_desteği.txt:7 templates/index.html:48
-msgid "Silmek istediğinize emin misiniz?"
-msgstr "Are you sure you want to delete?"
-
-#: shared/models/BaseModel.py:6
-msgid "Oluşturulma"
-msgstr "Created"
-
-#: shared/models/BaseModel.py:7
-msgid "Güncellenme"
-msgstr "Updated"
-
-#: shared/models/BaseModel.py:8
-msgid "Silinme"
-msgstr "Deleted"
-
-#: templates/components/admin/breadcrumb.html:8
-msgid "Ana Sayfa"
-msgstr "Home"
-
-#: templates/components/admin/breadcrumb.html:31
-msgid "Sayfa"
-msgstr "Page"
-
-#: templates/index.html:7 templates/index.html:10
+#: templates/index.html:7
 msgid "Hoş Geldiniz"
 msgstr "Welcome"
 
@@ -103,5 +81,17 @@ msgstr "This site is available in Turkish and English."
 #: templates/index.html:14
 msgid "Dil Değiştir"
 msgstr "Change Language"
+
+#: templates/index.html:17
+msgid "Silmek istediğinize emin misiniz?"
+msgstr "Are you sure you want to delete?"
+
+#: templates/index.html:21
+msgid "Hızlı Dil Değiştirme"
+msgstr "Quick Language Change"
+
+#: templates/partials/language_selector.html:12
+msgid "Değiştir"
+msgstr "Change"
 
 # System messages below - keep empty for default Django translations

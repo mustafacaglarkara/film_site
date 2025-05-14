@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!-- [ Header Topbar ] start -->
 <header class="pc-header">
   <div class="header-wrapper">
@@ -35,6 +37,58 @@
     <!-- [Mobile Media Block end] -->
     <div class="ms-auto">
       <ul class="list-unstyled">
+        <!-- Dil Seçici -->
+        <li class="dropdown pc-h-item">
+          <a
+            class="pc-head-link dropdown-toggle arrow-none me-0"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="false"
+            aria-expanded="false"
+          >
+            <i class="ti ti-language"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+            <div class="px-3 py-2">
+              <!-- Dil Değiştirme Formu -->
+              <form id="language-form" action="{% url 'set_language' %}" method="post" class="language-form">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}" id="next-input">
+                <select name="language" onchange="document.getElementById('language-form').submit()" class="form-select">
+                  {% get_available_languages as LANGUAGES %}
+                  {% for lang_code, lang_name in LANGUAGES %}
+                    <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                      {{ lang_name }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </form>
+              
+              <!-- Manuel Butonlar ile Dil Değiştirme -->
+              <div class="mt-2 d-flex justify-content-between">
+                <!-- Form tabanlı dil değiştirme butonları -->
+                <form action="{% url 'set_language' %}" method="post" style="width: 48%;">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{ request.path }}">
+                  <input type="hidden" name="language" value="tr">
+                  <button type="submit" class="btn btn-sm {% if LANGUAGE_CODE == 'tr' %}btn-primary{% else %}btn-outline-primary{% endif %} w-100">
+                    Türkçe
+                  </button>
+                </form>
+                
+                <form action="{% url 'set_language' %}" method="post" style="width: 48%;">
+                  {% csrf_token %}
+                  <input name="next" type="hidden" value="{{ request.path }}">
+                  <input type="hidden" name="language" value="en">
+                  <button type="submit" class="btn btn-sm {% if LANGUAGE_CODE == 'en' %}btn-primary{% else %}btn-outline-primary{% endif %} w-100">
+                    English
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
         <li class="dropdown pc-h-item">
           <a
             class="pc-head-link dropdown-toggle arrow-none me-0"

@@ -1,4 +1,8 @@
-# This file contains translations for the templates.
+# Turkish translations.
+# Copyright (C) 2024
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,10 +23,8 @@ msgid "Yönetim Paneli"
 msgstr "Yönetim Paneli"
 
 #: admin_panel/templates/admin_panel/dashboard.html:9
-msgid ""
-"Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
-msgstr ""
-"Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
+msgid "Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
+msgstr "Yönetim panelinize hoş geldiniz. Aşağıdaki işlemleri gerçekleştirebilirsiniz:"
 
 #: admin_panel/views/dashboard.py:16
 msgid "Yönetim"
@@ -68,31 +70,7 @@ msgstr "Blog Yazısı"
 msgid "Blog Yazıları"
 msgstr "Blog Yazıları"
 
-#: proje_gerekli/locale_desteği.txt:7 templates/index.html:48
-msgid "Silmek istediğinize emin misiniz?"
-msgstr "Silmek istediğinize emin misiniz?"
-
-#: shared/models/BaseModel.py:6
-msgid "Oluşturulma"
-msgstr "Oluşturulma"
-
-#: shared/models/BaseModel.py:7
-msgid "Güncellenme"
-msgstr "Güncellenme"
-
-#: shared/models/BaseModel.py:8
-msgid "Silinme"
-msgstr "Silinme"
-
-#: templates/components/admin/breadcrumb.html:8
-msgid "Ana Sayfa"
-msgstr "Ana Sayfa"
-
-#: templates/components/admin/breadcrumb.html:31
-msgid "Sayfa"
-msgstr "Sayfa"
-
-#: templates/index.html:7 templates/index.html:10
+#: templates/index.html:7
 msgid "Hoş Geldiniz"
 msgstr "Hoş Geldiniz"
 
@@ -103,3 +81,15 @@ msgstr "Bu site Türkçe ve İngilizce olarak kullanılabilir."
 #: templates/index.html:14
 msgid "Dil Değiştir"
 msgstr "Dil Değiştir"
+
+#: templates/index.html:17
+msgid "Silmek istediğinize emin misiniz?"
+msgstr "Silmek istediğinize emin misiniz?"
+
+#: templates/index.html:21
+msgid "Hızlı Dil Değiştirme"
+msgstr "Hızlı Dil Değiştirme"
+
+#: templates/partials/language_selector.html:12
+msgid "Değiştir"
+msgstr "Değiştir"

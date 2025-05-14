@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "modeltranslation",
+    "debug_toolbar",
     "admin_panel",
     "blog",
     "shared",
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -101,13 +103,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = "tr"
+LANGUAGE_CODE = "tr"  # Varsayılan dil Türkçe
 
 TIME_ZONE = "Europe/Istanbul"
 
-USE_I18N = True
-
+USE_I18N = True  # Uluslararasılaştırma
+USE_L10N = True  # Yerelleştirme
 USE_TZ = True
+
+# Bu ayar, içeriği dile göre otomatik değiştirmek için kullanılabilir
+# Aktif dil değiştirildiğinde sayfanın içeriği otomatik olarak güncellenecektir
+LOCALE_PATHS = [
+    BASE_DIR / "locale",  # proje dizinindeki locale klasörü
+]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -125,16 +133,58 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-# MCK Site İçin Gerekli Ayarlar
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
-APPEND_SLASH = True
 
+# Dil ayarları
 LANGUAGES = [
     ("tr", "Türkçe"),
     ("en", "English"),
 ]
-LOCALE_PATHS = [
-    BASE_DIR / "locale",  # proje dizinindeki locale klasörü
+
+# Dil ayarları için Django varsayılan değerler
+LANGUAGE_COOKIE_NAME = "django_language"
+LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30  # 30 gün
+LANGUAGE_COOKIE_PATH = "/"  # Tüm yollar için
+LANGUAGE_COOKIE_DOMAIN = None  # Tüm alt alanlar için None
+LANGUAGE_COOKIE_SECURE = False  # Sadece HTTPS
+LANGUAGE_COOKIE_HTTPONLY = False  # JavaScript erişebilir
+LANGUAGE_COOKIE_SAMESITE = "Lax"  # Cross-site request
+
+# Cache sistemi (geliştirme için)
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    }
+}
+
+# Debug Toolbar için gerekli ayarlar
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
+
+# Debug için log ayarları
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "INFO",
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "shared": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+    },
+}

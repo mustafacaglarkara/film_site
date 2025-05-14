@@ -1,6 +1,8 @@
 ﻿{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="{{ LANGUAGE_CODE }}">
   <!-- [Head] start -->
   <head>
     <title>Sample Page | Able Pro Dashboard Template</title>
@@ -51,6 +53,41 @@
     {% include "partials/admin/scripts.html" %}
     {% block scripts %}
     {% endblock scripts %}
+    
+    <!-- Dil değiştirme işlevselliği için JavaScript kodu -->
+    <script>
+      // Sayfa yüklendiğinde çalışacak kod
+      document.addEventListener('DOMContentLoaded', function() {
+        // URL ve çerez arasında tutarsızlık varsa doğru URL'ye yönlendir
+        var currentLangCookie = getCookie('django_language');
+        var currentPath = window.location.pathname;
+        
+        // Çerez ve URL tutarsız mı?
+        if (currentLangCookie === 'tr' && currentPath.indexOf('/en/') === 0) {
+          // Tr çerezi varsa ama URL /en/ ile başlıyorsa, /tr/ yönlendir
+          window.location.href = currentPath.replace('/en/', '/tr/');
+        } else if (currentLangCookie === 'en' && currentPath.indexOf('/tr/') === 0) {
+          // En çerezi varsa ama URL /tr/ ile başlıyorsa, /en/ yönlendir
+          window.location.href = currentPath.replace('/tr/', '/en/');
+        }
+      });
+      
+      // Çerez değerini okuma
+      function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+    </script>
   </body>
   <!-- [Body] end -->
 </html>
